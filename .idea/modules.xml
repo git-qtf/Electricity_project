@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot-alipay/springboot-alipay.iml" filepath="$PROJECT_DIR$/springboot-alipay/springboot-alipay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-cart/springboot-cart.iml" filepath="$PROJECT_DIR$/springboot-cart/springboot-cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-category/springboot-category.iml" filepath="$PROJECT_DIR$/springboot-category/springboot-category.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-common/springboot-common.iml" filepath="$PROJECT_DIR$/springboot-common/springboot-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-order/springboot-order.iml" filepath="$PROJECT_DIR$/springboot-order/springboot-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-product/springboot-product.iml" filepath="$PROJECT_DIR$/springboot-product/springboot-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-tieba/springboot-tieba.iml" filepath="$PROJECT_DIR$/springboot-tieba/springboot-tieba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-user/springboot-user.iml" filepath="$PROJECT_DIR$/springboot-user/springboot-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-wxpay/springboot-wxpay.iml" filepath="$PROJECT_DIR$/springboot-wxpay/springboot-wxpay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-shop.iml" filepath="$PROJECT_DIR$/springcloud-shop.iml" />
+    </modules>
+  </component>
+</project>

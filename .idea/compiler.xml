@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-order" />
+        <module name="springboot-wxpay" />
+        <module name="springboot-category" />
+        <module name="springboot-common" />
+        <module name="springboot-user" />
+        <module name="springboot-cart" />
+        <module name="springboot-alipay" />
+        <module name="springboot-tieba" />
+        <module name="springboot-product" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot-alipay" target="1.8" />
+      <module name="springboot-cart" target="1.8" />
+      <module name="springboot-category" target="1.8" />
+      <module name="springboot-common" target="1.8" />
+      <module name="springboot-order" target="1.8" />
+      <module name="springboot-product" target="1.8" />
+      <module name="springboot-tieba" target="1.8" />
+      <module name="springboot-user" target="1.8" />
+      <module name="springboot-wxpay" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-alipay" options="-parameters" />
+      <module name="springboot-cart" options="-parameters" />
+      <module name="springboot-category" options="-parameters" />
+      <module name="springboot-common" options="-parameters" />
+      <module name="springboot-order" options="-parameters" />
+      <module name="springboot-product" options="-parameters" />
+      <module name="springboot-tieba" options="-parameters" />
+      <module name="springboot-user" options="-parameters" />
+      <module name="springboot-wxpay" options="-parameters" />
+    </option>
+  </component>
+</project>
