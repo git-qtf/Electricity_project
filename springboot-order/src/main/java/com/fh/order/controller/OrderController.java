@@ -57,7 +57,7 @@ public class OrderController {
 
         if (cartList != null) {
             List cartList1 = (List) JSON.parseArray(cartList, Cart.class);
-            return ServerResponse.success(orderService.buildOrder(cartList1, payType, addressId, totalPrice, user));
+            return orderService.buildOrder(cartList1, payType, addressId, totalPrice, user);
         }
         return ServerResponse.error();
     }

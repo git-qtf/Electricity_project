@@ -5,7 +5,7 @@ import com.fh.cart.model.Cart;
 import com.fh.common.Ignore;
 import com.fh.common.ServerResponse;
 
-import com.fh.product.model.Product;
+import com.fh.service.ProcudtServiceFeign;
 import com.fh.user.model.User;
 import com.fh.utils.RedisUtil;
 import com.fh.utils.SystemConstant;
@@ -30,11 +30,11 @@ public class CartServiceImpl implements CartService{
     @Resource
     private RedisUtil redisUtil;
 
-    //@Resource
-    //private ProductMapper productMapper;
-    @Autowired
+    @Resource
+    private ProcudtServiceFeign procudtServiceFeign;
+   /* @Autowired
     private RestTemplate restTemplate;
-
+*/
     /**
      * 新增数据到redis数据库
      * @param cart
@@ -45,12 +45,14 @@ public class CartServiceImpl implements CartService{
 
 
         //Product product = productMapper.selectById(cart.getId());
-        ServerResponse serverResponse = restTemplate.postForObject("http://localhost:8083/product/selectById?id="+cart.getId(), null, ServerResponse.class);
+        //ServerResponse serverResponse = restTemplate.postForObject("http://127.0.0.1:8083/product/selectById?id="+cart.getId(), null, ServerResponse.class);
+        ServerResponse serverResponse = procudtServiceFeign.selectById(cart.getId());
 
-        if(serverResponse.getCode()!=200){
+
+      if(serverResponse.getCode()!=200){
             return serverResponse.error(serverResponse.getMessage());
         }
-        Map map = (Map) serverResponse.getdata();
+          Map map = (Map) serverResponse.getdata();
         //判断商品是否存在
         if(map == null ){
             return ServerResponse.error(SystemConstant.PRODUCT_IS_NULL);
@@ -85,7 +87,6 @@ public class CartServiceImpl implements CartService{
             String cartStr = JSON.toJSONString(cart);
             redisUtil.hset(SystemConstant.CART_KEY+user.getUserId(),cart.getId()+"",cartStr);
         }
-
         return ServerResponse.success();
     }
 
@@ -142,17 +143,6 @@ public class CartServiceImpl implements CartService{
         }
     }
 
-    /**
-     * 批量删除商品
-     * @return
-     */
-   /* @Override
-    public void deleteCartBach(List cart, HttpServletRequest request) {
-        User user = (User) request.getSession().getAttribute("user");
-        for (Object id:cart) {
-            redisUtil.hremove(SystemConstant.CART_KEY + user.getUserId(),id+"");
-        }
-    }*/
 
 
 }

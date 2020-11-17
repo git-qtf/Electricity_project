@@ -2,15 +2,18 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/springboot-alipay" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-alipay" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-cart" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-category" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-eureka8000" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-eureka8001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-product" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-tieba" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-user" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-wxpay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-feing" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

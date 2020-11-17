@@ -3,12 +3,12 @@ package com.fh.order.biz;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.fh.cart.model.Cart;
-import com.fh.common.Ignore;
 import com.fh.common.ServerResponse;
 import com.fh.order.mapper.OrderDetailMapper;
 import com.fh.order.mapper.OrderMapper;
 import com.fh.order.model.Order;
 import com.fh.order.model.OrderDetail;
+import com.fh.service.ProcudtServiceFeign;
 import com.fh.user.model.User;
 import com.fh.utils.IdUtil;
 import com.fh.utils.RedisUtil;
@@ -39,11 +39,12 @@ public class OrderServiceImpl implements OrderService{
     @Resource
     private OrderDetailMapper orderDetailMapper;
 
-   /* @Resource
-    private ProductMapper productMapper;*/
+    @Resource
+    private ProcudtServiceFeign procudtServiceFeign;
 
-    @Autowired
-    private RestTemplate restTemplate;
+   /* @Autowired
+    private RestTemplate restTemplate;*/
+
 
     /**
      * 生成订单
@@ -74,7 +75,8 @@ public class OrderServiceImpl implements OrderService{
         for (int i = 0; i < cartList1.size(); i++) {
             //通过商品id查询商品信息
 
-            ServerResponse serverResponse = restTemplate.postForObject("http://localhost:8083/product/selectById?id="+cartList1.get(i).getId(), null, ServerResponse.class);
+            //ServerResponse serverResponse = restTemplate.postForObject("springboot-product/product/selectById?id="+cartList1.get(i).getId(), null, ServerResponse.class);
+            ServerResponse serverResponse = procudtServiceFeign.selectById(cartList1.get(i).getId());
             if(serverResponse.getCode() != 200){
                 return ServerResponse.error(serverResponse.getMessage());
             }
@@ -82,11 +84,12 @@ public class OrderServiceImpl implements OrderService{
             //根据查询出来的商品信息来判断商品数量是否足够
             if(Integer.valueOf(String.valueOf(map.get("stock"))) >= cartList1.get(i).getCount()){
                 //如果充足减少数据库商品库存数量
-                ServerResponse res = restTemplate.postForObject("http://localhost:8083/product/updateStock?Id=" + cartList1.get(i).getId() + "&count=" + cartList1.get(i).getCount(), null, ServerResponse.class);
+                //ServerResponse res = restTemplate.postForObject("springboot-product/product/updateStock?Id=" + cartList1.get(i).getId() + "&count=" + cartList1.get(i).getCount(), null, ServerResponse.class);
+                ServerResponse res = procudtServiceFeign.updateStock(cartList1.get(i).getId(), cartList1.get(i).getCount());
                 if(res.getCode() != 200){
                     return ServerResponse.error(res.getMessage());
                 }
-                Map mm = (Map) res.getdata();
+
                 if(res.getdata().equals(1)){
                     //生成订单信息
                     OrderDetail orderDetail = getOrderDetail(orderId, cartList1.get(i));

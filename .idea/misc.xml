@@ -31,6 +31,9 @@
         <option value="$PROJECT_DIR$/springboot-wxpay/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-category/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-alipay/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-eureka8000/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-eureka8001/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-feign/pom.xml" />
       </list>
     </option>
   </component>

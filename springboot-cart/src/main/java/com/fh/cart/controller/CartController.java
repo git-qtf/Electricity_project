@@ -43,7 +43,6 @@ public class CartController {
      * 查询商品总数
      * @return
      */
-    @Ignore
     @RequestMapping("queryCartCount")
     public ServerResponse queryCartCount(@UserCustomAnnotations User user){
        try {
@@ -83,21 +82,6 @@ public class CartController {
        }
    }
 
-//    /**
-//     * 批量删除商品 传id删除
-//     * @return
-//     */
-//    @RequestMapping("deleteCartBach")
-//    public ServerResponse deleteCartBach(@RequestParam("ids") List cart,HttpServletRequest request){
-//       try {
-//           cartService.deleteCartBach(cart,request);
-//           return ServerResponse.success();
-//       } catch (Exception e) {
-//           e.printStackTrace();
-//           return ServerResponse.error();
-//       }
-//   }
-
     /**
      * 批量删除商品
      * @return
@@ -113,6 +97,8 @@ public class CartController {
             return ServerResponse.error();
         }
     }
+
+
 
 
 }

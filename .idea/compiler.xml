@@ -6,15 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-order" />
-        <module name="springboot-wxpay" />
+        <module name="springboot-product" />
         <module name="springboot-category" />
+        <module name="springboot-order" />
+        <module name="springcloud-feign" />
         <module name="springboot-common" />
         <module name="springboot-user" />
         <module name="springboot-cart" />
+        <module name="springboot-eureka8001" />
+        <module name="springboot-eureka8000" />
         <module name="springboot-alipay" />
         <module name="springboot-tieba" />
-        <module name="springboot-product" />
+        <module name="springboot-wxpay" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,11 +25,15 @@
       <module name="springboot-cart" target="1.8" />
       <module name="springboot-category" target="1.8" />
       <module name="springboot-common" target="1.8" />
+      <module name="springboot-eureka8000" target="1.8" />
+      <module name="springboot-eureka8001" target="1.8" />
       <module name="springboot-order" target="1.8" />
       <module name="springboot-product" target="1.8" />
       <module name="springboot-tieba" target="1.8" />
       <module name="springboot-user" target="1.8" />
       <module name="springboot-wxpay" target="1.8" />
+      <module name="springcloud-feign" target="1.8" />
+      <module name="springcloud-feing" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -10,10 +10,7 @@ import com.fh.vo.ProductPage;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -75,12 +72,12 @@ public class ProductController {
 
     /**
      * 根据id查询商品数据
-     * @param id
+     * @param
      * @return
      */
     @Ignore
     @RequestMapping("selectById")
-    public ServerResponse selectById(Integer id){
+    public ServerResponse selectById(@RequestParam("id") Integer id){
         try {
             return productService.selectById(id);
         } catch (Exception e) {

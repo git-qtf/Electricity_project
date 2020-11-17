@@ -2,8 +2,8 @@ package com.fh.order.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.fh.order.model.Order;
+import org.mapstruct.Mapper;
 
-import java.util.List;
 
 /**
  * @author huangp
@@ -11,8 +11,4 @@ import java.util.List;
  */
 public interface OrderMapper extends BaseMapper<Order> {
 
-    /**
-     * 查询所有订单
-     */
-    List<Order> queryOrder();
 }

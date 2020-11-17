@@ -19,11 +19,20 @@
     </properties>
 
     <dependencies>
+
+        <!--引入springcloud-feign微服务-->
+        <dependency>
+            <groupId>com.fh</groupId>
+            <artifactId>springcloud-feign</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>com.fh</groupId>
             <artifactId>springboot-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
     <build>
